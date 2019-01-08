@@ -1,0 +1,21 @@
+<h1>Лабораторная №12</h1>
+<% if @result.class == Array %>
+  <table border="1">
+    <tr>
+      <th>Номер итерации:&nbsp;&nbsp;&nbsp;&nbsp;</th>
+      <th>Результат вычисления:&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    </tr>
+
+    <% @result.size.times do |i| %>
+      <tr>
+        <td><%= (i+1).to_s + '.' %></td>
+        <td><%= @result[i] %></td>
+      </tr>
+    <% end %>
+  </table>
+  <h3>Итоговый результат:</h3>
+  <%= @result[@result.size - 1] %>
+<% else %>
+  <h2>Введены неверные данные, повторите попытку!</h2>
+<% end %>
+</br> <%= link_to "Повторить вычисления", :lr8_logic_input %>
